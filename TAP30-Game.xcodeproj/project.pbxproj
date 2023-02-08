@@ -1,0 +1,929 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9414625D29939DC700EF575F /* SelectableFormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9414625C29939DC700EF575F /* SelectableFormRow.swift */; };
+		9414625F29939DD700EF575F /* ResizableFormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9414625E29939DD700EF575F /* ResizableFormRow.swift */; };
+		941462622993A00900EF575F /* OfflineDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941462612993A00900EF575F /* OfflineDataProvider.swift */; };
+		941462642993A08D00EF575F /* WidgetToFormFieldMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941462632993A08D00EF575F /* WidgetToFormFieldMapper.swift */; };
+		941462672993C9AC00EF575F /* AppFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941462662993C9AC00EF575F /* AppFormField.swift */; };
+		941462692993C9C000EF575F /* FormRowGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941462682993C9C000EF575F /* FormRowGenerator.swift */; };
+		9414626B2993C9D500EF575F /* Strategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9414626A2993C9D500EF575F /* Strategies.swift */; };
+		9414626D2993CE8300EF575F /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9414626C2993CE8300EF575F /* Mock.swift */; };
+		94161ABF298EAC460054005F /* Taggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94161ABE298EAC460054005F /* Taggable.swift */; };
+		94161AC1298EAD020054005F /* ValuableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94161AC0298EAD020054005F /* ValuableRow.swift */; };
+		94161AC3298EAD380054005F /* SettableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94161AC2298EAD380054005F /* SettableRow.swift */; };
+		94161AC5298FC8390054005F /* ErrorableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94161AC4298FC8390054005F /* ErrorableRow.swift */; };
+		94161AC7298FCFA60054005F /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94161AC6298FCFA60054005F /* FormField.swift */; };
+		94161ACC29919DCE0054005F /* ScreenRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94161ACB29919DCE0054005F /* ScreenRowViewModel.swift */; };
+		94161ACE299287100054005F /* ReloadableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94161ACD299287100054005F /* ReloadableRow.swift */; };
+		94161AD129928AA00054005F /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94161AD029928AA00054005F /* TitleCell.swift */; };
+		94161AD629928BD80054005F /* TitleRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94161AD529928BD80054005F /* TitleRenderable.swift */; };
+		94161ADA29939D4C0054005F /* RenderableFormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94161AD929939D4C0054005F /* RenderableFormRow.swift */; };
+		9429278827E716F1003DE4F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9429278727E716F1003DE4F8 /* AppDelegate.swift */; };
+		9429278A27E716F1003DE4F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9429278927E716F1003DE4F8 /* SceneDelegate.swift */; };
+		9429278C27E716F1003DE4F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9429278B27E716F1003DE4F8 /* ViewController.swift */; };
+		9429278F27E716F1003DE4F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9429278D27E716F1003DE4F8 /* Main.storyboard */; };
+		9429279127E716F2003DE4F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9429279027E716F2003DE4F8 /* Assets.xcassets */; };
+		9429279427E716F2003DE4F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9429279227E716F2003DE4F8 /* LaunchScreen.storyboard */; };
+		9429279F27E716F2003DE4F8 /* TAP30_GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9429279E27E716F2003DE4F8 /* TAP30_GameTests.swift */; };
+		942927A927E716F2003DE4F8 /* TAP30_GameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942927A827E716F2003DE4F8 /* TAP30_GameUITests.swift */; };
+		942927AB27E716F2003DE4F8 /* TAP30_GameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942927AA27E716F2003DE4F8 /* TAP30_GameUITestsLaunchTests.swift */; };
+		94977DEE2986B2F500206987 /* TextFieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94977DED2986B2F500206987 /* TextFieldRow.swift */; };
+		94977DF12986B35900206987 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94977DF02986B35900206987 /* TextFieldCell.swift */; };
+		94977DF32986B37500206987 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94977DF22986B37500206987 /* TextFieldViewModel.swift */; };
+		94977DF72986B44F00206987 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94977DF62986B44F00206987 /* Validators.swift */; };
+		94977DFA2986BC3F00206987 /* SwitchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94977DF92986BC3F00206987 /* SwitchRow.swift */; };
+		94977DFC2986BC6C00206987 /* SwitchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94977DFB2986BC6C00206987 /* SwitchViewModel.swift */; };
+		94977DFE2986BC7100206987 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94977DFD2986BC7100206987 /* SwitchCell.swift */; };
+		94A559652988FE0000184EF5 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A559642988FE0000184EF5 /* BaseCell.swift */; };
+		94A559672989017D00184EF5 /* RowMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A559662989017D00184EF5 /* RowMessage.swift */; };
+		94A559692989018C00184EF5 /* RowMoreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A559682989018C00184EF5 /* RowMoreInfo.swift */; };
+		94A5596B2989025B00184EF5 /* BaseFormItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5596A2989025B00184EF5 /* BaseFormItemViewModel.swift */; };
+		94A5596D298903E600184EF5 /* BaseFormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5596C298903E600184EF5 /* BaseFormRow.swift */; };
+		94A5597229893F1100184EF5 /* SelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5597129893F1100184EF5 /* SelectorCell.swift */; };
+		94A5597429893F1800184EF5 /* SelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5597329893F1800184EF5 /* SelectorViewModel.swift */; };
+		94A559762989471B00184EF5 /* StickyFormPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A559752989471B00184EF5 /* StickyFormPageViewController.swift */; };
+		94A55978298947CF00184EF5 /* StickyFormPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A55977298947CF00184EF5 /* StickyFormPageViewModel.swift */; };
+		94A5597B298A879E00184EF5 /* WidgetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5597A298A879E00184EF5 /* WidgetType.swift */; };
+		94A5597D298A87A400184EF5 /* WidgetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5597C298A87A400184EF5 /* WidgetData.swift */; };
+		94A5597F298AB68500184EF5 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5597E298AB68500184EF5 /* Form.swift */; };
+		94A55985298BB95E00184EF5 /* SelectorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A55984298BB95E00184EF5 /* SelectorRow.swift */; };
+		94A5598A298E790C00184EF5 /* FormInputItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A55989298E790C00184EF5 /* FormInputItem.swift */; };
+		94A5598D298E8C9700184EF5 /* DividerRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5598C298E8C9700184EF5 /* DividerRenderable.swift */; };
+		94A5598F298E8CB700184EF5 /* DivierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5598E298E8CB700184EF5 /* DivierCell.swift */; };
+		94A55991298EAB6000184EF5 /* GettableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A55990298EAB6000184EF5 /* GettableRow.swift */; };
+		94F6786F2986B06000FA0FC3 /* FormRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F6786E2986B05F00FA0FC3 /* FormRenderer.swift */; };
+		94F678712986B1B000FA0FC3 /* FormPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F678702986B1B000FA0FC3 /* FormPageViewController.swift */; };
+		94F678732986B1B800FA0FC3 /* FormPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F678722986B1B800FA0FC3 /* FormPageViewModel.swift */; };
+		94F678752986B1FD00FA0FC3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F678742986B1FD00FA0FC3 /* Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9429279B27E716F2003DE4F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9429277C27E716F1003DE4F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9429278327E716F1003DE4F8;
+			remoteInfo = "TAP30-Game";
+		};
+		942927A527E716F2003DE4F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9429277C27E716F1003DE4F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9429278327E716F1003DE4F8;
+			remoteInfo = "TAP30-Game";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9414625C29939DC700EF575F /* SelectableFormRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableFormRow.swift; sourceTree = "<group>"; };
+		9414625E29939DD700EF575F /* ResizableFormRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableFormRow.swift; sourceTree = "<group>"; };
+		941462612993A00900EF575F /* OfflineDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineDataProvider.swift; sourceTree = "<group>"; };
+		941462632993A08D00EF575F /* WidgetToFormFieldMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetToFormFieldMapper.swift; sourceTree = "<group>"; };
+		941462662993C9AC00EF575F /* AppFormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFormField.swift; sourceTree = "<group>"; };
+		941462682993C9C000EF575F /* FormRowGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowGenerator.swift; sourceTree = "<group>"; };
+		9414626A2993C9D500EF575F /* Strategies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strategies.swift; sourceTree = "<group>"; };
+		9414626C2993CE8300EF575F /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		94161ABE298EAC460054005F /* Taggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Taggable.swift; sourceTree = "<group>"; };
+		94161AC0298EAD020054005F /* ValuableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuableRow.swift; sourceTree = "<group>"; };
+		94161AC2298EAD380054005F /* SettableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettableRow.swift; sourceTree = "<group>"; };
+		94161AC4298FC8390054005F /* ErrorableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorableRow.swift; sourceTree = "<group>"; };
+		94161AC6298FCFA60054005F /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
+		94161ACB29919DCE0054005F /* ScreenRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRowViewModel.swift; sourceTree = "<group>"; };
+		94161ACD299287100054005F /* ReloadableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadableRow.swift; sourceTree = "<group>"; };
+		94161AD029928AA00054005F /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
+		94161AD529928BD80054005F /* TitleRenderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRenderable.swift; sourceTree = "<group>"; };
+		94161AD929939D4C0054005F /* RenderableFormRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderableFormRow.swift; sourceTree = "<group>"; };
+		9429278427E716F1003DE4F8 /* TAP30-Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TAP30-Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9429278727E716F1003DE4F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9429278927E716F1003DE4F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9429278B27E716F1003DE4F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9429278E27E716F1003DE4F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9429279027E716F2003DE4F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9429279327E716F2003DE4F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9429279527E716F2003DE4F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9429279A27E716F2003DE4F8 /* TAP30-GameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TAP30-GameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9429279E27E716F2003DE4F8 /* TAP30_GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAP30_GameTests.swift; sourceTree = "<group>"; };
+		942927A427E716F2003DE4F8 /* TAP30-GameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TAP30-GameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		942927A827E716F2003DE4F8 /* TAP30_GameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAP30_GameUITests.swift; sourceTree = "<group>"; };
+		942927AA27E716F2003DE4F8 /* TAP30_GameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAP30_GameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		94977DED2986B2F500206987 /* TextFieldRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldRow.swift; sourceTree = "<group>"; };
+		94977DF02986B35900206987 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
+		94977DF22986B37500206987 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
+		94977DF62986B44F00206987 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		94977DF92986BC3F00206987 /* SwitchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchRow.swift; sourceTree = "<group>"; };
+		94977DFB2986BC6C00206987 /* SwitchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewModel.swift; sourceTree = "<group>"; };
+		94977DFD2986BC7100206987 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
+		94A559642988FE0000184EF5 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		94A559662989017D00184EF5 /* RowMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowMessage.swift; sourceTree = "<group>"; };
+		94A559682989018C00184EF5 /* RowMoreInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowMoreInfo.swift; sourceTree = "<group>"; };
+		94A5596A2989025B00184EF5 /* BaseFormItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFormItemViewModel.swift; sourceTree = "<group>"; };
+		94A5596C298903E600184EF5 /* BaseFormRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFormRow.swift; sourceTree = "<group>"; };
+		94A5597129893F1100184EF5 /* SelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorCell.swift; sourceTree = "<group>"; };
+		94A5597329893F1800184EF5 /* SelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorViewModel.swift; sourceTree = "<group>"; };
+		94A559752989471B00184EF5 /* StickyFormPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyFormPageViewController.swift; sourceTree = "<group>"; };
+		94A55977298947CF00184EF5 /* StickyFormPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyFormPageViewModel.swift; sourceTree = "<group>"; };
+		94A5597A298A879E00184EF5 /* WidgetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetType.swift; sourceTree = "<group>"; };
+		94A5597C298A87A400184EF5 /* WidgetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetData.swift; sourceTree = "<group>"; };
+		94A5597E298AB68500184EF5 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
+		94A55984298BB95E00184EF5 /* SelectorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorRow.swift; sourceTree = "<group>"; };
+		94A55989298E790C00184EF5 /* FormInputItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormInputItem.swift; sourceTree = "<group>"; };
+		94A5598C298E8C9700184EF5 /* DividerRenderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerRenderable.swift; sourceTree = "<group>"; };
+		94A5598E298E8CB700184EF5 /* DivierCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivierCell.swift; sourceTree = "<group>"; };
+		94A55990298EAB6000184EF5 /* GettableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettableRow.swift; sourceTree = "<group>"; };
+		94F6786E2986B05F00FA0FC3 /* FormRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRenderer.swift; sourceTree = "<group>"; };
+		94F678702986B1B000FA0FC3 /* FormPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormPageViewController.swift; sourceTree = "<group>"; };
+		94F678722986B1B800FA0FC3 /* FormPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormPageViewModel.swift; sourceTree = "<group>"; };
+		94F678742986B1FD00FA0FC3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9429278127E716F1003DE4F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9429279727E716F2003DE4F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		942927A127E716F2003DE4F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9414626029939FEC00EF575F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9429278B27E716F1003DE4F8 /* ViewController.swift */,
+				941462612993A00900EF575F /* OfflineDataProvider.swift */,
+				941462632993A08D00EF575F /* WidgetToFormFieldMapper.swift */,
+				941462662993C9AC00EF575F /* AppFormField.swift */,
+				941462682993C9C000EF575F /* FormRowGenerator.swift */,
+				9414626A2993C9D500EF575F /* Strategies.swift */,
+				9414626C2993CE8300EF575F /* Mock.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		94161AC829919D810054005F /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				94161ACB29919DCE0054005F /* ScreenRowViewModel.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		94161ACF29928A970054005F /* Title */ = {
+			isa = PBXGroup;
+			children = (
+				94161AD029928AA00054005F /* TitleCell.swift */,
+				94161AD529928BD80054005F /* TitleRenderable.swift */,
+			);
+			path = Title;
+			sourceTree = "<group>";
+		};
+		94161AD729939CDF0054005F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				94F678702986B1B000FA0FC3 /* FormPageViewController.swift */,
+				94F678722986B1B800FA0FC3 /* FormPageViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		94161AD829939CE80054005F /* Sticky */ = {
+			isa = PBXGroup;
+			children = (
+				94A559752989471B00184EF5 /* StickyFormPageViewController.swift */,
+				94A55977298947CF00184EF5 /* StickyFormPageViewModel.swift */,
+			);
+			path = Sticky;
+			sourceTree = "<group>";
+		};
+		9429277B27E716F1003DE4F8 = {
+			isa = PBXGroup;
+			children = (
+				9429278627E716F1003DE4F8 /* TAP30-Game */,
+				9429279D27E716F2003DE4F8 /* TAP30-GameTests */,
+				942927A727E716F2003DE4F8 /* TAP30-GameUITests */,
+				9429278527E716F1003DE4F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9429278527E716F1003DE4F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9429278427E716F1003DE4F8 /* TAP30-Game.app */,
+				9429279A27E716F2003DE4F8 /* TAP30-GameTests.xctest */,
+				942927A427E716F2003DE4F8 /* TAP30-GameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9429278627E716F1003DE4F8 /* TAP30-Game */ = {
+			isa = PBXGroup;
+			children = (
+				9414626029939FEC00EF575F /* Main */,
+				94977DEC2986B2E500206987 /* Example */,
+				94F6786D2986AF9E00FA0FC3 /* FormBuilder */,
+				9429278727E716F1003DE4F8 /* AppDelegate.swift */,
+				9429278927E716F1003DE4F8 /* SceneDelegate.swift */,
+				9429278D27E716F1003DE4F8 /* Main.storyboard */,
+				9429279027E716F2003DE4F8 /* Assets.xcassets */,
+				9429279227E716F2003DE4F8 /* LaunchScreen.storyboard */,
+				9429279527E716F2003DE4F8 /* Info.plist */,
+				94F678742986B1FD00FA0FC3 /* Extensions.swift */,
+			);
+			path = "TAP30-Game";
+			sourceTree = "<group>";
+		};
+		9429279D27E716F2003DE4F8 /* TAP30-GameTests */ = {
+			isa = PBXGroup;
+			children = (
+				9429279E27E716F2003DE4F8 /* TAP30_GameTests.swift */,
+			);
+			path = "TAP30-GameTests";
+			sourceTree = "<group>";
+		};
+		942927A727E716F2003DE4F8 /* TAP30-GameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				942927A827E716F2003DE4F8 /* TAP30_GameUITests.swift */,
+				942927AA27E716F2003DE4F8 /* TAP30_GameUITestsLaunchTests.swift */,
+			);
+			path = "TAP30-GameUITests";
+			sourceTree = "<group>";
+		};
+		94977DEC2986B2E500206987 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				94A55979298A879400184EF5 /* Widgets */,
+				94A5596F2989262000184EF5 /* Rows */,
+				94A5596E2989260900184EF5 /* FormPage */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		94977DEF2986B34D00206987 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				94977DED2986B2F500206987 /* TextFieldRow.swift */,
+				94977DF02986B35900206987 /* TextFieldCell.swift */,
+				94977DF22986B37500206987 /* TextFieldViewModel.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		94977DF82986BC3400206987 /* Switch */ = {
+			isa = PBXGroup;
+			children = (
+				94977DF92986BC3F00206987 /* SwitchRow.swift */,
+				94977DFD2986BC7100206987 /* SwitchCell.swift */,
+				94977DFB2986BC6C00206987 /* SwitchViewModel.swift */,
+			);
+			path = Switch;
+			sourceTree = "<group>";
+		};
+		94A559632988F33800184EF5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				94A559642988FE0000184EF5 /* BaseCell.swift */,
+				94A5596A2989025B00184EF5 /* BaseFormItemViewModel.swift */,
+				94A5596C298903E600184EF5 /* BaseFormRow.swift */,
+				94A559662989017D00184EF5 /* RowMessage.swift */,
+				94A559682989018C00184EF5 /* RowMoreInfo.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		94A5596E2989260900184EF5 /* FormPage */ = {
+			isa = PBXGroup;
+			children = (
+				94161AD829939CE80054005F /* Sticky */,
+				94161AD729939CDF0054005F /* Base */,
+			);
+			path = FormPage;
+			sourceTree = "<group>";
+		};
+		94A5596F2989262000184EF5 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				94161ACF29928A970054005F /* Title */,
+				94161AC829919D810054005F /* Screen */,
+				94A5598B298E8C8D00184EF5 /* Divider */,
+				94A559632988F33800184EF5 /* Base */,
+				94A5597029893E9E00184EF5 /* Selector */,
+				94977DF82986BC3400206987 /* Switch */,
+				94977DEF2986B34D00206987 /* TextField */,
+				94161ABE298EAC460054005F /* Taggable.swift */,
+				94A55990298EAB6000184EF5 /* GettableRow.swift */,
+				94161AC2298EAD380054005F /* SettableRow.swift */,
+				94161AC0298EAD020054005F /* ValuableRow.swift */,
+				94161AC4298FC8390054005F /* ErrorableRow.swift */,
+				94161ACD299287100054005F /* ReloadableRow.swift */,
+			);
+			path = Rows;
+			sourceTree = "<group>";
+		};
+		94A5597029893E9E00184EF5 /* Selector */ = {
+			isa = PBXGroup;
+			children = (
+				94A55984298BB95E00184EF5 /* SelectorRow.swift */,
+				94A5597129893F1100184EF5 /* SelectorCell.swift */,
+				94A5597329893F1800184EF5 /* SelectorViewModel.swift */,
+			);
+			path = Selector;
+			sourceTree = "<group>";
+		};
+		94A55979298A879400184EF5 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				94A5597A298A879E00184EF5 /* WidgetType.swift */,
+				94A5597C298A87A400184EF5 /* WidgetData.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		94A55980298AB6A100184EF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				94F6786E2986B05F00FA0FC3 /* FormRenderer.swift */,
+				94161AD929939D4C0054005F /* RenderableFormRow.swift */,
+				9414625C29939DC700EF575F /* SelectableFormRow.swift */,
+				9414625E29939DD700EF575F /* ResizableFormRow.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		94A55981298AB6A900184EF5 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				94A5597E298AB68500184EF5 /* Form.swift */,
+				94161AC6298FCFA60054005F /* FormField.swift */,
+				94A55989298E790C00184EF5 /* FormInputItem.swift */,
+				94977DF62986B44F00206987 /* Validators.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		94A5598B298E8C8D00184EF5 /* Divider */ = {
+			isa = PBXGroup;
+			children = (
+				94A5598C298E8C9700184EF5 /* DividerRenderable.swift */,
+				94A5598E298E8CB700184EF5 /* DivierCell.swift */,
+			);
+			path = Divider;
+			sourceTree = "<group>";
+		};
+		94F6786D2986AF9E00FA0FC3 /* FormBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				94A55981298AB6A900184EF5 /* Core */,
+				94A55980298AB6A100184EF5 /* View */,
+			);
+			path = FormBuilder;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9429278327E716F1003DE4F8 /* TAP30-Game */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 942927AE27E716F2003DE4F8 /* Build configuration list for PBXNativeTarget "TAP30-Game" */;
+			buildPhases = (
+				9429278027E716F1003DE4F8 /* Sources */,
+				9429278127E716F1003DE4F8 /* Frameworks */,
+				9429278227E716F1003DE4F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TAP30-Game";
+			productName = "TAP30-Game";
+			productReference = 9429278427E716F1003DE4F8 /* TAP30-Game.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9429279927E716F2003DE4F8 /* TAP30-GameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 942927B127E716F2003DE4F8 /* Build configuration list for PBXNativeTarget "TAP30-GameTests" */;
+			buildPhases = (
+				9429279627E716F2003DE4F8 /* Sources */,
+				9429279727E716F2003DE4F8 /* Frameworks */,
+				9429279827E716F2003DE4F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9429279C27E716F2003DE4F8 /* PBXTargetDependency */,
+			);
+			name = "TAP30-GameTests";
+			productName = "TAP30-GameTests";
+			productReference = 9429279A27E716F2003DE4F8 /* TAP30-GameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		942927A327E716F2003DE4F8 /* TAP30-GameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 942927B427E716F2003DE4F8 /* Build configuration list for PBXNativeTarget "TAP30-GameUITests" */;
+			buildPhases = (
+				942927A027E716F2003DE4F8 /* Sources */,
+				942927A127E716F2003DE4F8 /* Frameworks */,
+				942927A227E716F2003DE4F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				942927A627E716F2003DE4F8 /* PBXTargetDependency */,
+			);
+			name = "TAP30-GameUITests";
+			productName = "TAP30-GameUITests";
+			productReference = 942927A427E716F2003DE4F8 /* TAP30-GameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9429277C27E716F1003DE4F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					9429278327E716F1003DE4F8 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					9429279927E716F2003DE4F8 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 9429278327E716F1003DE4F8;
+					};
+					942927A327E716F2003DE4F8 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 9429278327E716F1003DE4F8;
+					};
+				};
+			};
+			buildConfigurationList = 9429277F27E716F1003DE4F8 /* Build configuration list for PBXProject "TAP30-Game" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9429277B27E716F1003DE4F8;
+			productRefGroup = 9429278527E716F1003DE4F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9429278327E716F1003DE4F8 /* TAP30-Game */,
+				9429279927E716F2003DE4F8 /* TAP30-GameTests */,
+				942927A327E716F2003DE4F8 /* TAP30-GameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9429278227E716F1003DE4F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9429279427E716F2003DE4F8 /* LaunchScreen.storyboard in Resources */,
+				9429279127E716F2003DE4F8 /* Assets.xcassets in Resources */,
+				9429278F27E716F1003DE4F8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9429279827E716F2003DE4F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		942927A227E716F2003DE4F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9429278027E716F1003DE4F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94161ABF298EAC460054005F /* Taggable.swift in Sources */,
+				94A5597429893F1800184EF5 /* SelectorViewModel.swift in Sources */,
+				9414625D29939DC700EF575F /* SelectableFormRow.swift in Sources */,
+				94A5597229893F1100184EF5 /* SelectorCell.swift in Sources */,
+				94161AD129928AA00054005F /* TitleCell.swift in Sources */,
+				94A559672989017D00184EF5 /* RowMessage.swift in Sources */,
+				9414626B2993C9D500EF575F /* Strategies.swift in Sources */,
+				941462642993A08D00EF575F /* WidgetToFormFieldMapper.swift in Sources */,
+				94A5598F298E8CB700184EF5 /* DivierCell.swift in Sources */,
+				94977DF32986B37500206987 /* TextFieldViewModel.swift in Sources */,
+				94161AC7298FCFA60054005F /* FormField.swift in Sources */,
+				94A55985298BB95E00184EF5 /* SelectorRow.swift in Sources */,
+				94977DFC2986BC6C00206987 /* SwitchViewModel.swift in Sources */,
+				94161AC3298EAD380054005F /* SettableRow.swift in Sources */,
+				94F6786F2986B06000FA0FC3 /* FormRenderer.swift in Sources */,
+				94A559652988FE0000184EF5 /* BaseCell.swift in Sources */,
+				9429278C27E716F1003DE4F8 /* ViewController.swift in Sources */,
+				9414626D2993CE8300EF575F /* Mock.swift in Sources */,
+				94161AD629928BD80054005F /* TitleRenderable.swift in Sources */,
+				94A5596D298903E600184EF5 /* BaseFormRow.swift in Sources */,
+				94A5598A298E790C00184EF5 /* FormInputItem.swift in Sources */,
+				9429278827E716F1003DE4F8 /* AppDelegate.swift in Sources */,
+				941462672993C9AC00EF575F /* AppFormField.swift in Sources */,
+				94F678732986B1B800FA0FC3 /* FormPageViewModel.swift in Sources */,
+				94F678712986B1B000FA0FC3 /* FormPageViewController.swift in Sources */,
+				94977DF12986B35900206987 /* TextFieldCell.swift in Sources */,
+				94161ADA29939D4C0054005F /* RenderableFormRow.swift in Sources */,
+				94977DF72986B44F00206987 /* Validators.swift in Sources */,
+				94A5598D298E8C9700184EF5 /* DividerRenderable.swift in Sources */,
+				9429278A27E716F1003DE4F8 /* SceneDelegate.swift in Sources */,
+				94161ACC29919DCE0054005F /* ScreenRowViewModel.swift in Sources */,
+				941462692993C9C000EF575F /* FormRowGenerator.swift in Sources */,
+				94161AC1298EAD020054005F /* ValuableRow.swift in Sources */,
+				94A559692989018C00184EF5 /* RowMoreInfo.swift in Sources */,
+				94A55991298EAB6000184EF5 /* GettableRow.swift in Sources */,
+				94A5596B2989025B00184EF5 /* BaseFormItemViewModel.swift in Sources */,
+				94977DEE2986B2F500206987 /* TextFieldRow.swift in Sources */,
+				941462622993A00900EF575F /* OfflineDataProvider.swift in Sources */,
+				94F678752986B1FD00FA0FC3 /* Extensions.swift in Sources */,
+				94161ACE299287100054005F /* ReloadableRow.swift in Sources */,
+				94161AC5298FC8390054005F /* ErrorableRow.swift in Sources */,
+				94A55978298947CF00184EF5 /* StickyFormPageViewModel.swift in Sources */,
+				94977DFA2986BC3F00206987 /* SwitchRow.swift in Sources */,
+				94A5597B298A879E00184EF5 /* WidgetType.swift in Sources */,
+				94A5597F298AB68500184EF5 /* Form.swift in Sources */,
+				9414625F29939DD700EF575F /* ResizableFormRow.swift in Sources */,
+				94A559762989471B00184EF5 /* StickyFormPageViewController.swift in Sources */,
+				94977DFE2986BC7100206987 /* SwitchCell.swift in Sources */,
+				94A5597D298A87A400184EF5 /* WidgetData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9429279627E716F2003DE4F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9429279F27E716F2003DE4F8 /* TAP30_GameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		942927A027E716F2003DE4F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				942927A927E716F2003DE4F8 /* TAP30_GameUITests.swift in Sources */,
+				942927AB27E716F2003DE4F8 /* TAP30_GameUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9429279C27E716F2003DE4F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9429278327E716F1003DE4F8 /* TAP30-Game */;
+			targetProxy = 9429279B27E716F2003DE4F8 /* PBXContainerItemProxy */;
+		};
+		942927A627E716F2003DE4F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9429278327E716F1003DE4F8 /* TAP30-Game */;
+			targetProxy = 942927A527E716F2003DE4F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9429278D27E716F1003DE4F8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9429278E27E716F1003DE4F8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9429279227E716F2003DE4F8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9429279327E716F2003DE4F8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		942927AC27E716F2003DE4F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		942927AD27E716F2003DE4F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		942927AF27E716F2003DE4F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VUJ486KNEX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TAP30-Game/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "matin.TAP30-Game";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		942927B027E716F2003DE4F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VUJ486KNEX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TAP30-Game/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "matin.TAP30-Game";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		942927B227E716F2003DE4F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VUJ486KNEX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "matin.TAP30-GameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TAP30-Game.app/TAP30-Game";
+			};
+			name = Debug;
+		};
+		942927B327E716F2003DE4F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VUJ486KNEX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "matin.TAP30-GameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TAP30-Game.app/TAP30-Game";
+			};
+			name = Release;
+		};
+		942927B527E716F2003DE4F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VUJ486KNEX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "matin.TAP30-GameUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "TAP30-Game";
+			};
+			name = Debug;
+		};
+		942927B627E716F2003DE4F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VUJ486KNEX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "matin.TAP30-GameUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "TAP30-Game";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9429277F27E716F1003DE4F8 /* Build configuration list for PBXProject "TAP30-Game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				942927AC27E716F2003DE4F8 /* Debug */,
+				942927AD27E716F2003DE4F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		942927AE27E716F2003DE4F8 /* Build configuration list for PBXNativeTarget "TAP30-Game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				942927AF27E716F2003DE4F8 /* Debug */,
+				942927B027E716F2003DE4F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		942927B127E716F2003DE4F8 /* Build configuration list for PBXNativeTarget "TAP30-GameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				942927B227E716F2003DE4F8 /* Debug */,
+				942927B327E716F2003DE4F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		942927B427E716F2003DE4F8 /* Build configuration list for PBXNativeTarget "TAP30-GameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				942927B527E716F2003DE4F8 /* Debug */,
+				942927B627E716F2003DE4F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9429277C27E716F1003DE4F8 /* Project object */;
+}

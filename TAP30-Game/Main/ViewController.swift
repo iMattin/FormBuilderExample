@@ -7,50 +7,6 @@
 
 import UIKit
 
-
-struct SubmitStrategy: StickyFormPageSubmitStrategy {
-    func onSubmit(_ fields: [FormField], completion: @escaping SubmitCompletion) -> StickyFormPageStatus {
-        let dics = fields.compactMap { $0.type.inputItem }.compactMap {
-            $0 as? GettableRow
-        }.map { $0.keyValuePair }
-
-        let json = try! JSONEncoder().encode(dics)
-        print(json.prettyPrintedJSONString!)
-
-        completion(.reload([
-            AppFormField(field: .customTitle("DONE ✅"))
-        ]))
-        return .none
-    }
-}
-
-struct ValueChangeStrategy: StickyFormPageValueChangeStrategy {
-    func onValueChange<Value>(_ item: FormInputItem<Value>, _ fields: [FormField], completion: @escaping SubmitCompletion) -> StickyFormPageStatus where Value : Equatable {
-        guard let textInput = item as? TextFieldViewModel, textInput.key == "field1" else { return .none }
-        let screen = fields.compactMap { $0.type.inputItem }.compactMap { $0 as? SettableRow }.first(where: { $0.key == "screen1" })
-        screen?.setValue(.nested(values: [
-            "screen2": .nested(values: [
-                "innter_field1": .string(value: textInput.value ?? "")
-            ])
-        ]))
-        completion(.none)
-        return .none
-    }
-}
-
-struct ScreenSubmitStrategy: StickyFormPageSubmitStrategy {
-    let submitClosure: ([KeyValuePairs]) -> Void
-
-    func onSubmit(_ fields: [FormField], completion: @escaping SubmitCompletion) -> StickyFormPageStatus {
-        let dics = fields.compactMap { $0.type.inputItem }.compactMap {
-            $0 as? GettableRow
-        }.map { $0.keyValuePair }
-        submitClosure(dics)
-        completion(.none)
-        return .none
-    }
-}
-
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -94,21 +50,20 @@ extension ViewController: SelectorViewModelDelegate {
 
 extension ViewController: ScreenRowViewModelDelegate {
     func screenRowViewModel(_ viewModel: ScreenRowViewModel, widgets: [Widget], preset data: KeyValuePairs?) {
-        var vc: StickyFormPageViewController!
         let submitStrategy = ScreenSubmitStrategy { [weak self] result in
             viewModel.setValue(result.reduce([:], { partialResult, dic in
                 partialResult.merging(dic) { c, _ in c }
             }))
             (self?.presentedViewController as? UINavigationController)?.popViewController(animated: true)
         }
-        
+
         var mapper = DefaultWidgetToFormFieldMapper()
         mapper.selectorDelegate = self
         mapper.screenDelegate = self
 
         let dataProvider = OfflineDataProvider(mapper: mapper, widgets: widgets, filledData: data)
         let vm = StickyFormPageViewModel(dataProvider: dataProvider, submitStrategy: submitStrategy)
-        vc = .init(viewModel: vm, generator: DefaultFormPageRowGenerator())
+        let vc = StickyFormPageViewController(viewModel: vm, generator: DefaultFormPageRowGenerator())
         (presentedViewController as? UINavigationController)?.pushViewController(vc, animated: true)
     }
 }

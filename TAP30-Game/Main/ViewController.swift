@@ -9,20 +9,23 @@ import UIKit
 
 
 struct SubmitStrategy: StickyFormPageSubmitStrategy {
-    func onSubmit(_ inputItems: [FormInputItemProtocol], _ completion: @escaping () -> Void) -> StickyFormPageStatus {
-        let dics = inputItems.compactMap {
+    func onSubmit(_ fields: [FormField], completion: @escaping SubmitCompletion) -> StickyFormPageStatus {
+        let dics = fields.compactMap { $0.type.inputItem }.compactMap {
             $0 as? GettableRow
         }.map { $0.keyValuePair }
 
         let json = try! JSONEncoder().encode(dics)
         print(json.prettyPrintedJSONString!)
 
+        completion(.reload([
+            AppFormField(field: .customTitle("DONE ✅"))
+        ]))
         return .none
     }
 }
 
 struct ValueChangeStrategy: StickyFormPageValueChangeStrategy {
-    func onValueChange<Value>(_ item: FormInputItem<Value>, fields: [FormField], completion: @escaping ([FormField]) -> Void) -> StickyFormPageStatus where Value : Equatable {
+    func onValueChange<Value>(_ item: FormInputItem<Value>, _ fields: [FormField], completion: @escaping SubmitCompletion) -> StickyFormPageStatus where Value : Equatable {
         guard let textInput = item as? TextFieldViewModel, textInput.key == "field1" else { return .none }
         let screen = fields.compactMap { $0.type.inputItem }.compactMap { $0 as? SettableRow }.first(where: { $0.key == "screen1" })
         screen?.setValue(.nested(values: [
@@ -30,6 +33,7 @@ struct ValueChangeStrategy: StickyFormPageValueChangeStrategy {
                 "innter_field1": .string(value: textInput.value ?? "")
             ])
         ]))
+        completion(.none)
         return .none
     }
 }
@@ -37,12 +41,12 @@ struct ValueChangeStrategy: StickyFormPageValueChangeStrategy {
 struct ScreenSubmitStrategy: StickyFormPageSubmitStrategy {
     let submitClosure: ([KeyValuePairs]) -> Void
 
-    func onSubmit(_ inputItems: [FormInputItemProtocol], _ completion: @escaping () -> Void) -> StickyFormPageStatus {
-        let dics = inputItems.compactMap {
+    func onSubmit(_ fields: [FormField], completion: @escaping SubmitCompletion) -> StickyFormPageStatus {
+        let dics = fields.compactMap { $0.type.inputItem }.compactMap {
             $0 as? GettableRow
         }.map { $0.keyValuePair }
         submitClosure(dics)
-        completion()
+        completion(.none)
         return .none
     }
 }
@@ -97,6 +101,7 @@ extension ViewController: ScreenRowViewModelDelegate {
             }))
             (self?.presentedViewController as? UINavigationController)?.popViewController(animated: true)
         }
+        
         var mapper = DefaultWidgetToFormFieldMapper()
         mapper.selectorDelegate = self
         mapper.screenDelegate = self

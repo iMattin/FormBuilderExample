@@ -13,12 +13,19 @@ enum StickyFormPageStatus {
     case none
 }
 
+enum StickyFormResult {
+    case reload(_ fields: [FormField])
+    case none
+}
+
+typealias SubmitCompletion = (_ result: StickyFormResult) -> Void
+
 protocol StickyFormPageSubmitStrategy {
-    func onSubmit(_ inputItems: [FormInputItemProtocol], _ completion: @escaping () -> Void) -> StickyFormPageStatus
+    func onSubmit(_ fields: [FormField], completion: @escaping SubmitCompletion) -> StickyFormPageStatus
 }
 
 protocol StickyFormPageValueChangeStrategy {
-    func onValueChange<Value: Equatable>(_ item: FormInputItem<Value>, fields: [FormField], completion:  @escaping (_ fields: [FormField]) -> Void)  -> StickyFormPageStatus
+    func onValueChange<Value: Equatable>(_ item: FormInputItem<Value>, _ fields: [FormField], completion: @escaping SubmitCompletion) -> StickyFormPageStatus
 }
 
 protocol StickyFormPageWidgetProvider {
@@ -57,12 +64,11 @@ class StickyFormPageViewModel: FormPageViewModel, StickyFormPageViewModelProtoco
 
     func submit() {
         validateForm()
-        guard form.valid else { return }
+        guard form.status != .invalid else { return }
 
-        status = submitStrategy.onSubmit(form.allInputItems) { [weak self] in
-            guard let self else { return }
-            self.status = .none
-        }
+        status = submitStrategy.onSubmit(form.fields, completion: { [weak self] result in
+            self?.handle(result: result)
+        })
     }
 
     override func viewDidLoad() {
@@ -73,19 +79,23 @@ class StickyFormPageViewModel: FormPageViewModel, StickyFormPageViewModelProtoco
     override func valueHasBeenChanged<Value: Equatable>(_ form: Form, item: FormInputItem<Value>, oldValue: Value?, newValue: Value?) {
         guard let valueChangeStrategy else { return }
 
-        status = valueChangeStrategy.onValueChange(item, fields: form.fields) { [weak self] fields in
-            guard let self else { return }
-            self.status = .none
-            self.set(fields: fields)
-        }
+        status = valueChangeStrategy.onValueChange(item, form.fields, completion: { [weak self] result in
+            self?.handle(result: result)
+        })
     }
 
     private func loadData() {
         status = dataProvider.provide { [weak self] fields in
-            guard let self else { return }
+            self?.set(fields: fields)
+        }
+    }
 
-            self.status = .none
+    private func handle(result: StickyFormResult) {
+        self.status = .none
+        switch result {
+        case .reload(let fields):
             self.set(fields: fields)
+        case .none: break
         }
     }
 }
